@@ -1,6 +1,6 @@
 -- read :h vim.lsp.config for changing options of lsp servers 
 
-require("nvchad.configs.lspconfig").defaults()
+--require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 local nvlsp = require "nvchad.lsp"
@@ -42,3 +42,11 @@ lspconfig.tailwindcss.setup({
 --   on_init = nvlsp.on_init,
 --   capabilities = nvlsp.capabilities,
 -- }
+
+-- configuration for pyright server
+lspconfig.pyright.setup {
+    on_attach = nvlsp.on_attach,
+    capabilities = nvlsp.capabilities,
+    filetypes = { "python" },
+}
+

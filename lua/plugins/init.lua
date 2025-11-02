@@ -19,8 +19,7 @@ return {
         },
         -- Configure nvim-cmp with NvChad's default options merged with your custom options
         config = function ()
-            local cmp = require "cmp"
-            local nvchad_opts = require("nvchad.configs.cmp") -- NvChad default cmp options
+            local cmp = require "cmp" local nvchad_opts = require("nvchad.configs.cmp") -- NvChad default cmp options
             local custom_opts = require("configs.nvim-cmp") -- your custom cmp options
 
             nvchad_opts.mapping = custom_opts.mapping -- if you want to use your mappings
@@ -100,6 +99,7 @@ return {
         "tailwindcss-language-server",
         "prettier",
         "eslint-lsp",
+        "pyright"
       },
     },
   },
