@@ -28,11 +28,16 @@ M.ui = {
         style = "atom_colored",
         icons_left = true,
     },
+    transparency = {
+        enable = true,
+        value = 20,
+    }
 }
 
 M.mason = {
   pkgs = {
     "typescript-language-server",
+    "tailwindcss-language-server",
     "lua-language-server",
     "eslint-lsp",
     "html-lsp",

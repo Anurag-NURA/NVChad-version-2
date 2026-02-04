@@ -19,11 +19,11 @@ return {
         end,
     },
     sources = {
-        { name = "nvim_lsp" },
-        { name = "path" },
-        { name = "luasnip" },
-        { name = "buffer" },
-        { name = "nvim_lua" },
+        { name = "nvim_lsp", priority = 1000 },
+        { name = "path",  priority = 500 },
+        { name = "luasnip", priority = 750 },
+        { name = "buffer" , priority = 250, keywords_length = 5 },
+        { name = "nvim_lua", priority = 500 },
         { name = "cmdline" },
     },
     experimental = {
