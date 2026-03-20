@@ -111,7 +111,6 @@ vim.lsp.config("clangd", {
     "--background-index", 
     "--clang-tidy",
     "--completion-style=detailed",
-    "function-arg-placeholders",
   },
   filetypes = { "c", "cpp", "c++" },
 })

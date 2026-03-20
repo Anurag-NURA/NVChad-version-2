@@ -115,4 +115,13 @@ return {
       require("nvim-ts-autotag").setup()
     end,
   },
+
+  -- Comment.nvim for easy commenting
+  {
+    "numToStr/Comment.nvim",
+    event = "VeryLazy",
+    config = function()
+      return require "configs.comment"
+    end,
+  }, 
 }
