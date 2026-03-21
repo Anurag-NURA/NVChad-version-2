@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "gatekeeper",
+	theme = "ayu_dark",
 
 	hl_override = {
 		Comment = { italic = true },
@@ -27,10 +27,6 @@ M.ui = {
     cmp = {
         style = "atom_colored",
         icons_left = true,
-    },
-    transparency = {
-        enable = true,
-        value = 20,
     }
 }
 
