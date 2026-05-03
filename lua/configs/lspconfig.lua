@@ -10,15 +10,12 @@ end
 
 local servers = {
   "bashls",
-  "clangd",
   "cssls",
   "dockerls",
   "gopls",
   "html",
   "jsonls",
-  "pyright",
   "rust_analyzer",
-  "ts_ls", -- typescript
   "yamlls",
 }
 
@@ -106,9 +103,9 @@ vim.lsp.config("clangd", {
   on_attach = on_attach,
   on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
-  cmd = { 
-    "clangd", 
-    "--background-index", 
+  cmd = {
+    "clangd",
+    "--background-index",
     "--clang-tidy",
     "--completion-style=detailed",
   },
@@ -116,9 +113,22 @@ vim.lsp.config("clangd", {
 })
 vim.lsp.enable "clangd"
 
-
-
-
-
+vim.lsp.config("gopls", {
+  on_attach = on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+  settings = {
+    gopls = {
+      analyses = {
+        completeUnimported = true,
+        usePlaceholders = true,
+        unusedparams = true,
+        shadow = true,
+      },
+      staticcheck = true,
+    },
+  },
+})
+vim.lsp.enable "gopls"
 
 --end

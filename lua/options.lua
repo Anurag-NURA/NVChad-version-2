@@ -6,13 +6,15 @@ require "nvchad.options"
 -- o.cursorlineopt ='both' -- to enable cursorline!
 local opt = vim.opt
 
-opt.tabstop = 2        -- Number of spaces tabs count for
-opt.shiftwidth = 2     -- Size of an indent
-opt.softtabstop = 2    -- Number of spaces a <Tab> counts for while performing editing
-opt.expandtab = true   -- Use spaces instead of tabs
+opt.tabstop = 2 -- Number of spaces tabs count for
+opt.shiftwidth = 2 -- Size of an indent
+opt.softtabstop = 2 -- Number of spaces a <Tab> counts for while performing editing
+opt.expandtab = true -- Use spaces instead of tabs
 
-opt.relativenumber=true -- Show relative line numbers
+opt.relativenumber = true -- Show relative line numbers
 
 opt.wrap = true -- Enable line wrapping
 opt.linebreak = true -- Break lines at word boundaries
 opt.breakindent = true -- Indent wrapped lines
+
+vim.opt.clipboard:append "unnamedplus" -- Use the system clipboard for all operations (copy/paste)

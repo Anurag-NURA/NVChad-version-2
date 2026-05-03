@@ -13,6 +13,7 @@ local options = {
     "json",
     "astro",
     "markdown",
+    "go",
   },
 
   highlight = {

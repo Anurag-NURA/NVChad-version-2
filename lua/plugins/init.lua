@@ -29,14 +29,13 @@ return {
     end,
   },
 
-  -- Snippet engine
+  -- Code formatting plugin
   -- {
   --   "stevearc/conform.nvim",
   --   event = "BufWritePre", -- uncomment for format on save
   --   opts = require "configs.conform",
   --  },
 
-  -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -63,6 +62,19 @@ return {
     end,
   },
 
+  -- neovim debug adapter protocol client
+  {
+    "mfussenegger/nvim-dap",
+  },
+
+  {
+    "leoluz/nvim-dap-go",
+    ft = "go",
+    config = function(_, opts)
+      require("dap-go").setup(opts)
+    end,
+  },
+
   -- GitHub Copilot
   {
     "github/copilot.vim",
@@ -77,20 +89,6 @@ return {
   --     return require "configs.formatter"
   --   end,
   -- },
-
-  -- Mason for managing external tools
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "typescript-language-server",
-        "tailwindcss-language-server",
-        "prettier",
-        "eslint-lsp",
-        "pyright",
-      },
-    },
-  },
 
   -- Null-ls for integrating external formatters and linters
   {
@@ -123,5 +121,18 @@ return {
     config = function()
       return require "configs.comment"
     end,
-  }, 
+  },
+
+  {
+    "folke/lazydev.nvim",
+    event = "VeryLazy",
+    ft = "lua", -- only load on lua files
+    opts = {
+      library = {
+        {
+          path = "nvim-lspconfig",
+        },
+      },
+    },
+  },
 }
