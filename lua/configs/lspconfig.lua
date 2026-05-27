@@ -12,7 +12,6 @@ local servers = {
   "bashls",
   "cssls",
   "dockerls",
-  "gopls",
   "html",
   "jsonls",
   "rust_analyzer",
@@ -119,13 +118,13 @@ vim.lsp.config("gopls", {
   capabilities = nvlsp.capabilities,
   settings = {
     gopls = {
+      completeUnimported = true,
+      usePlaceholders = true,
+      staticcheck = true,
       analyses = {
-        completeUnimported = true,
-        usePlaceholders = true,
         unusedparams = true,
         shadow = true,
       },
-      staticcheck = true,
     },
   },
 })

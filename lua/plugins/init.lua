@@ -47,7 +47,9 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
-    opts = require "configs.treesitter",
+    config = function()
+      require "configs.treesitter"
+    end,
     highlight = {
       enable = true,
     },
