@@ -77,6 +77,11 @@ vim.lsp.config("ts_ls", {
   on_attach = on_attach,
   on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
+  -- disable formatting to avoid conflicts with prettierd via conform.nvim
+  handlers = {
+    ["textDocument/formatting"] = function() end,
+    ["textDocument/rangeFormatting"] = function() end,
+  },
 })
 vim.lsp.enable "ts_ls"
 
