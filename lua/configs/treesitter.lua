@@ -14,6 +14,7 @@ local options = {
     "astro",
     "markdown",
     "go",
+    "python",
   },
 
   highlight = {
