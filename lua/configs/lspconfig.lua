@@ -16,6 +16,7 @@ local servers = {
   "jsonls",
   "rust_analyzer",
   "yamlls",
+  "pyright",
 }
 
 -- lsps with default config
@@ -134,5 +135,21 @@ vim.lsp.config("gopls", {
   },
 })
 vim.lsp.enable "gopls"
+
+vim.lsp.config("pyright", {
+  on_attach = on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+  settings = {
+    python = {
+      analysis = {
+        typeCheckingMode = "strict",
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+      },
+    },
+  },
+})
+vim.lsp.enable "pyright"
 
 --end

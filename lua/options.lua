@@ -18,3 +18,11 @@ opt.linebreak = true -- Break lines at word boundaries
 opt.breakindent = true -- Indent wrapped lines
 
 vim.opt.clipboard:append "unnamedplus" -- Use the system clipboard for all operations (copy/paste)
+
+-- Ensure inline (virtual text) diagnostics are shown for LSP including Pyright:
+vim.diagnostic.config({
+  virtual_text = true,   -- show diagnostics as inline text
+  signs = true,          -- show signs in gutter
+  underline = true,      -- underline error ranges
+  update_in_insert = false, -- don't update while typing
+})

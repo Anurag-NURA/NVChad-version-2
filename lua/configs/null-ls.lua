@@ -4,7 +4,7 @@ local opts = {
   sources = {
     null_ls.builtins.formatting.gofumpt,
     null_ls.builtins.formatting.goimports,
--- prettier formatting is handled by conform.nvim
+    -- prettier formatting is handled by conform.nvim
     null_ls.builtins.formatting.stylua.with {
       extra_args = {
         "--indent-type",
@@ -12,6 +12,9 @@ local opts = {
         "--indent-width",
         "2",
       },
+    },
+    null_ls.builtins.formatting.black.with {
+      extra_args = { "--line-length", "88" },
     },
   },
 }
